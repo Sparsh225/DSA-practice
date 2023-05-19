@@ -16,6 +16,10 @@ public class even_integer_removed {
 		System.out.println("move Zero Right");
 		ev.movezeroRight(arr1);
 		ev.printarr(arr1);
+		
+		int[] arr2 = { 2, 3, 5, 1, 6, 8, 9, 7 };
+		System.out.println("missing number " + ev.missingnumber(arr2));
+78
 	}
 
 	public int[] removedeven(int[] arr) {
@@ -90,5 +94,14 @@ public class even_integer_removed {
 				j++;
 			}
 		}
+	}
+	
+	public int missingnumber(int[] arr) {
+		int n = arr.length - 1;
+		int sum = n * n + 1 / 2;
+		for (int i = 0; i < arr.length; i++) {
+			sum = sum - arr[i];
+		}
+		return sum;
 	}
 }
