@@ -19,6 +19,9 @@ public class even_integer_removed {
 		
 		int[] arr2 = { 2, 3, 5, 1, 6, 8, 9, 7 };
 		System.out.println("missing number " + ev.missingnumber(arr2));
+		
+		String word = "booby";
+		System.out.println(word + " is palindrome : " + ev.ispalindrome("bobby"));
 78
 	}
 
@@ -103,5 +106,15 @@ public class even_integer_removed {
 			sum = sum - arr[i];
 		}
 		return sum;
+	}
+	public boolean ispalindrome(String arr) {
+		char[] chararray = arr.toCharArray();
+		int start = 0, end = arr.length() - 1;
+		while (start <= end) {
+			if (chararray[start] != chararray[end]) {
+				return false;
+			}
+		}
+		return true;
 	}
 }
