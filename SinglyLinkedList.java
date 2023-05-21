@@ -31,6 +31,12 @@ public class SinglyLinkedList {
 		System.out.println("Insert first linkedlist ");
 		sll.insertfirst(0);
 		sll.print();
+		
+		System.out.println();
+		System.out.println("Insert end linkedlist ");
+		sll.insertend(50);
+		sll.print();
+		System.out.println();
 	}
 
 	public void print() {
@@ -56,5 +62,15 @@ public class SinglyLinkedList {
 		Listnode newnode = new Listnode(value);
 		newnode.next = head;
 		head = newnode;
+	}
+	
+	public void insertend(int value) {
+		Listnode newnode = new Listnode(value);
+		Listnode temp = head;
+		while (temp.next != null) {
+			temp = temp.next;
+		}
+		temp.next = newnode;
+
 	}
 }
