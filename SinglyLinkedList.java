@@ -37,6 +37,10 @@ public class SinglyLinkedList {
 		sll.insertend(50);
 		sll.print();
 		System.out.println();
+		System.out.println("Insert at any position linkedlist ");
+		sll.insertatpos(3, 44);
+		sll.print();
+		System.out.println();
 	}
 
 	public void print() {
@@ -73,4 +77,20 @@ public class SinglyLinkedList {
 		temp.next = newnode;
 
 	}
+	public void insertatpos(int pos, int value) {
+		Listnode newnode = new Listnode(value);
+		if (pos == 1) {
+			newnode.next = head;
+			head = newnode;
+		} else {
+			Listnode pre = head;
+			int count = 1;
+			while (count < pos - 1) {
+				pre = pre.next;
+				count++;
+			}
+			newnode.next = pre.next;
+			pre.next = newnode;
+
+		}
 }
