@@ -48,6 +48,9 @@ public class SinglyLinkedList {
 		System.out.println("delete last " + sll.deletelast().data);
 		sll.print();
 		System.out.println();
+		System.out.println("delete any position " + sll.deleteanypos(3).data);
+		sll.print();
+		System.out.println();
 	}
 
 	public void print() {
@@ -119,5 +122,22 @@ public class SinglyLinkedList {
 		}
 		pre.next = null;
 		return current;
+	}
+	
+	public Listnode deleteanypos(int pos) {
+		if (pos == 1) {
+			head = head.next;
+		} else {
+			int count = 1;
+			Listnode pre = head;
+			while (count < pos - 1) {
+				pre = pre.next;
+				count++;
+			}
+			Listnode current = pre.next;
+			pre.next = current.next;
+			return current;
+		}
+		return null;
 	}
 }
