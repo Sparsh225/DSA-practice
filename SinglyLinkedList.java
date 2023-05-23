@@ -91,6 +91,6 @@ public class SinglyLinkedList {
 			}
 			newnode.next = pre.next;
 			pre.next = newnode;
-
+                    }
 		}
 }
