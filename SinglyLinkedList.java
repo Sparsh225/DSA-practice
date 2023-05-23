@@ -41,6 +41,10 @@ public class SinglyLinkedList {
 		sll.insertatpos(3, 44);
 		sll.print();
 		System.out.println();
+		System.out.println("delete first ");
+		sll.deletefirst();
+		sll.print();
+		System.out.println();
 	}
 
 	public void print() {
@@ -93,4 +97,11 @@ public class SinglyLinkedList {
 			pre.next = newnode;
                     }
 		}
+	public Listnode deletefirst() {
+		if(head==null) {return null;}
+        Listnode temp=head;
+        head=head.next;
+        temp.next=null;
+        return temp;
+}
 }
