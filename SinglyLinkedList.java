@@ -57,6 +57,16 @@ public class SinglyLinkedList {
 		System.out.println();
 	}
 
+	public Listnode middlenode() {
+		Listnode fastptr = head;
+		Listnode slowptr = head;
+		while (fastptr != null && fastptr.next != null) {
+			slowptr = slowptr.next;
+			fastptr = fastptr.next.next;
+		}
+		return slowptr;
+	}
+	
 	public void display(Listnode revhead) {
 		Listnode temp = revhead;
 		while (temp != null) {
