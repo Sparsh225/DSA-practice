@@ -83,6 +83,18 @@ public class SinglyLinkedList {
 		return mainptr;
 	}
 	
+	public boolean detectloop() {
+		Listnode fastptr=head;
+		Listnode slowptr=head;
+		while(fastptr!=null && fastptr.next!=null) {
+			fastptr=fastptr.next.next;
+			slowptr=slowptr.next;
+			if(fastptr==slowptr) {
+				return true;
+			}
+		}
+		return false;
+	}
 	
 	public Listnode insertsorted(Listnode newnode) {
 		Listnode current=head;
