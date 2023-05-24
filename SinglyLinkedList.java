@@ -77,7 +77,7 @@ public class SinglyLinkedList {
 		Listnode current=head;
 		while(current!=null && current.next!=null) {
 			if(current.data==current.next.data) {
-				current=current.next.next;
+				current.next=current.next.next;
 			}else {
 				current=current.next;
 			}
