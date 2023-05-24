@@ -73,6 +73,17 @@ public class SinglyLinkedList {
 		return mainptr;
 	}
 	
+	public void removeduplicatesorted() {
+		Listnode current=head;
+		while(current!=null && current.next!=null) {
+			if(current.data==current.next.data) {
+				current=current.next.next;
+			}else {
+				current=current.next;
+			}
+		}
+	}
+	
 	public Listnode middlenode() {
 		Listnode fastptr = head;
 		Listnode slowptr = head;
