@@ -26,6 +26,7 @@ public class SinglyLinkedList {
 		third.next = fourth;
 		sll.print();
 		System.out.println();
+		System.out.println("nth element from last of Linked list " + sll.fromlast(2).data);
 		System.out.println("Length of linkedlist " + sll.length());
 
 		System.out.println("Insert first linkedlist ");
@@ -57,6 +58,21 @@ public class SinglyLinkedList {
 		System.out.println();
 	}
 
+	public Listnode fromlast(int n) {
+		int count = 0;
+		Listnode refptr = head;
+		Listnode mainptr = head;
+		while (count < n) {
+			refptr = refptr.next;
+			count++;
+		}
+		while (refptr != null) {
+			refptr = refptr.next;
+			mainptr = mainptr.next;
+		}
+		return mainptr;
+	}
+	
 	public Listnode middlenode() {
 		Listnode fastptr = head;
 		Listnode slowptr = head;
