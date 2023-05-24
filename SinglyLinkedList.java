@@ -58,6 +58,16 @@ public class SinglyLinkedList {
 		System.out.println();
 	}
 
+	public void deletekeynode(int key) {
+		Listnode current = head;
+		Listnode temp = null;
+		while (current != null && current.data != key) {
+			temp = current;
+			current = current.next;
+		}
+		temp.next = current.next;
+	}
+	
 	public Listnode fromlast(int n) {
 		int count = 0;
 		Listnode refptr = head;
