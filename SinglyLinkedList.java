@@ -52,8 +52,37 @@ public class SinglyLinkedList {
 		sll.print();
 		System.out.println();
 		System.out.println("element present in the linkedlist " + sll.search(5));
+                Listnode revhead = sll.reverse(sll.head);
+		sll.display(revhead);
+		System.out.println();
 	}
-        
+
+	public void display(Listnode revhead) {
+		Listnode temp = revhead;
+		while (temp != null) {
+			System.out.print(temp.data + "--> ");
+			temp = temp.next;
+		}
+		System.out.print("null");
+	}
+
+	public Listnode reverse(Listnode head) {
+		if (head == null) {
+			return head;
+		}
+		Listnode current = head;
+		Listnode pre = null;
+		Listnode next = null;
+		while (current != null) {
+			next = current.next;
+			current.next = pre;
+			pre = current;
+			current = next;
+		}
+		return pre;
+	}
+	
+         
 	public boolean search(int value) {
 		Listnode temp = head;
 		while (temp != null) {
