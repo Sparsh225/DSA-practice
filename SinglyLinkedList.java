@@ -73,6 +73,19 @@ public class SinglyLinkedList {
 		return mainptr;
 	}
 	
+	
+	public Listnode insertsorted(Listnode newnode) {
+		Listnode current=head;
+		Listnode temp=null;
+		while(current !=null && current.data<newnode.data) {
+			temp=current;
+			current=current.next;
+		}
+		newnode.next=current;
+		temp.next=newnode;
+		return head;
+	}
+	
 	public void removeduplicatesorted() {
 		Listnode current=head;
 		while(current!=null && current.next!=null) {
