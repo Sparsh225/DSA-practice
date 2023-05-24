@@ -51,8 +51,20 @@ public class SinglyLinkedList {
 		System.out.println("delete any position " + sll.deleteanypos(3).data);
 		sll.print();
 		System.out.println();
+		System.out.println("element present in the linkedlist " + sll.search(5));
 	}
-
+        
+	public boolean search(int value) {
+		Listnode temp = head;
+		while (temp != null) {
+			if (temp.data == value) {
+				return true;
+			}
+			temp = temp.next;
+		}
+		return false;
+	}
+	
 	public void print() {
 		Listnode temp = head;
 		while (temp != null) {
