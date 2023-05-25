@@ -31,6 +31,18 @@ public class DoublyLinkedList {
 		return length;
 	}
 
+	public void insertatfirst(int value) {
+		Listnode newnode = new Listnode(value);
+		if (head == null) {
+			tail = newnode;
+		} else {
+			head.pre = newnode;
+		}
+		newnode.next = head;
+		head = newnode;
+		length++;
+	}
+	
 	public void insertatlast(int value) {
 		Listnode newnode = new Listnode(value);
 		if (head == null) {
