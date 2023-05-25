@@ -58,6 +58,26 @@ public class SinglyLinkedList {
 		System.out.println();
 	}
 
+	public Listnode mergesortedlist(Listnode a,Listnode b) {
+		Listnode dummy=new Listnode(0);
+		Listnode tail=dummy;
+		while(a!=null && b!=null) {
+			if(a.data<=b.data) {
+				tail.next=a;
+				a=a.next;
+			}else {
+				tail.next=b;
+				b=b.next;
+			}
+		}
+		if(a==null) {
+			tail.next=b;
+		}else {
+			tail.next=a;
+		}
+		return dummy.next;
+	}
+	
 	public Listnode removeloop() {
 		Listnode fast=head;
 		Listnode slow=head;
