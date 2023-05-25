@@ -58,6 +58,26 @@ public class SinglyLinkedList {
 		System.out.println();
 	}
 
+	public Listnode removeloop() {
+		Listnode fast=head;
+		Listnode slow=head;
+		while(fast!=null && fast.next !=null) {
+			slow=slow.next;
+			fast=fast.next;
+			if(fast==slow)  removedloop(slow);
+		}
+		return null;
+	}
+	
+	public void removedloop(Listnode slow) {
+		Listnode temp=head;
+		while(slow!=temp) {
+			slow=slow.next;
+			temp=temp.next;
+		}
+	    temp.next=null;
+	}
+	
 	public Listnode startloop() {
 		Listnode fast=head;
 		Listnode slow=head;
