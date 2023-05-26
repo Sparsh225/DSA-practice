@@ -31,6 +31,30 @@ public class DoublyLinkedList {
 		return length;
 	}
 
+	public Listnode deletefirst() {
+		Listnode temp=head;
+		if(head==tail) {
+			tail=null;
+		}else {
+			head.next.pre=null;
+		}
+		head=head.next;
+		temp.next=null;
+		return temp;
+	}
+	
+	public Listnode deletelast() {
+		Listnode temp=head;
+		if(head==tail) {
+			head=null;
+		}else {
+			tail.pre.next=null;
+		}
+	    tail=tail.pre;
+		temp.pre=null;
+		return temp;
+	}
+	
 	public void insertatfirst(int value) {
 		Listnode newnode = new Listnode(value);
 		if (head == null) {
