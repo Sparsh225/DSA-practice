@@ -26,6 +26,18 @@ public class CircularLinkedList {
 	public boolean isEmpty() {
 		return length == 0;
 	}
+	
+	public void insertatfirst(int data) {
+		Listnode temp=new Listnode(data);
+		if(last==null) {
+			last=temp;
+		}else {
+			temp.next=last.next;
+		}
+		last.next=temp;
+		length++;
+	}
+
 
 	public void createcircularlist() {
 		Listnode first = new Listnode(1);
