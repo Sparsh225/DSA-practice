@@ -52,6 +52,19 @@ public class Queue {
 		System.out.print("null");
 	}
 
+	public int dequeue() {
+		if(isEmpty()) {
+			throw new NoSuchElementException();
+		}
+		int result=front.data;
+		front=front.next;
+		if(front==null) {
+			rear=null;
+		}
+		length--;
+		return result;
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Queue q = new Queue();
@@ -61,6 +74,11 @@ public class Queue {
 		q.enqeue(64);
 		q.enqeue(22);
 		q.print();
+		System.out.println();
+	    q.dequeue();
+	    q.dequeue();
+	    q.dequeue();
+		q.print();
+	}
 	}
 
-}
