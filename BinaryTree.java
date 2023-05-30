@@ -94,6 +94,26 @@ public class BinaryTree {
 				temp=temp.right;
 			}
 		}
+		
+		
+	public void levelorder(Treenode root) {
+		if (root == null) {
+			return;
+		}
+		Queue<Treenode> q = new LinkedList<>();
+		q.offer(root);
+		while (!q.isEmpty()) {
+			Treenode temp = q.poll();
+			System.out.print(temp.data + " ");
+			if (temp.left != null) {
+				q.offer(temp.left);
+			}
+			if (temp.right != null) {
+				q.offer(temp.right);
+			}
+		}
+	}
+
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
