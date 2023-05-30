@@ -78,7 +78,23 @@ public class BinaryTree {
 			}
 		}
 	}
-
+ 
+       // Inorder iterative	
+	public void inorderit(Treenode root) {
+		if(root==null) return;
+		Stack<Treenode> stack=new Stack<>();
+		Treenode temp=root;
+		while(temp!=null || !stack.isEmpty()) {
+			if(temp!=null) {
+				stack.push(temp);
+				temp=temp.left;
+			}else {
+				temp=stack.pop();
+				System.out.print(temp.data+" ");
+				temp=temp.right;
+			}
+		}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		BinaryTree b = new BinaryTree();
