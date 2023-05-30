@@ -96,6 +96,24 @@ public class BinaryTree {
 		}
 		
 		
+		
+	
+	public static int maxtree(Treenode root) {
+		if (root == null) {
+			return Integer.MIN_VALUE;
+		}
+		int result = root.data;
+		int left = maxtree(root.left);
+		int right = maxtree(root.right);
+		if (result < left) {
+			result = left;
+		}
+		if (result < right) {
+			result = right;
+		}
+		return result;
+	}
+
 	public void levelorder(Treenode root) {
 		if (root == null) {
 			return;
