@@ -1,7 +1,7 @@
 package technical;
 
 public class CircularLinkedList {
-
+ 
 	private Listnode last;
 	private int length;
 
