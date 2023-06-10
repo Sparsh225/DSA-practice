@@ -21,6 +21,12 @@ public class MazePath {
 		for (String s : verticalresult) {
 			result.add("V" + s);
 		}
+		
+		
+		ArrayList<String> diagonalresult = getmaze(currentrow + 1, currentcol + 1, endrow, endcol);
+		for (String s : diagonalresult) {
+			result.add("D" + s);
+		}
 
 		ArrayList<String> horizontailresult = getmaze(currentrow, currentcol + 1, endrow, endcol);
 		for (String s : horizontailresult) {
