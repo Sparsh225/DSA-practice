@@ -9,6 +9,7 @@ public class diceGame {
 			ArrayList<String> list = new ArrayList<>();
 			list.add("");
 			return list;
+			
 		}
 		if (current > target) {
 			ArrayList<String> list = new ArrayList<>();
