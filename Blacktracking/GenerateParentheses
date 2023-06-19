@@ -1,1 +1,21 @@
 
+class Solution {
+    public List<String> generateParenthesis(int n) {
+      ArrayList<String> ans =new ArrayList<>();  
+      helper(ans,"",0,0,n);
+      return ans;
+    }
+    public void helper(ArrayList<String> ans,String current,int open,int close ,int max){
+      if(current.length()==max*2){
+          ans.add(current);
+          return;
+      }
+      
+      if(open<max){
+      helper(ans,current+"(",open+1,close,max);
+      }
+      if(close<open){
+      helper(ans,current+")",open,close+1,max);
+      }
+    }
+}
