@@ -1,0 +1,109 @@
+package technical;
+
+import java.util.Scanner;
+
+public class ArrayCRUD {
+
+	int[] arr;
+	int currentSize;
+
+	ArrayCRUD(int n) {
+		this.arr = new int[n];
+		this.currentSize = 0;
+	}
+
+	void insert(int index, int val) {
+		if (index > currentSize) {
+			System.out.println("Index cannot be greater than current size...");
+			return;
+		}
+		if (currentSize != arr.length) {
+		for (int i = currentSize - 1; i >= index; i--) {
+			arr[i + 1] = arr[i];
+		}
+		arr[index] = val;
+	}
+		currentSize++;
+	}
+
+	void update(int index, int val) {
+		if (index > currentSize) {
+			System.out.println("Index cannot be greater than current size...");
+		}
+		arr[index] = val;
+
+	}
+
+	void delete(int index) {
+		if (currentSize == 0) {
+			System.out.print("Array is Empty");
+		}
+		for (int i = index; i < currentSize; i++) {
+			arr[i] = arr[i + 1];
+		}
+		arr[currentSize - 1] = 0;
+		currentSize--;
+
+	}
+
+	void print() {
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+	}
+
+	void search(int val) {
+		boolean flag = false;
+		for (int i = 0; i < currentSize; i++) {
+			if (arr[i] == val) {
+				flag = true;
+			}
+		}
+		if (flag == true) {
+			System.out.print("ELement Found:");
+		} else {
+			System.out.print("ELement Not Found :");
+		}
+	}
+
+	public static void main(String[] args) {
+		ArrayCRUD ae = new ArrayCRUD(5);
+		Scanner sc = new Scanner(System.in);
+		int ch;
+
+		do {
+			System.out.print(
+					"Enter Your Choice \n 1.insert element \n 2.update element \n 3.delete index \n 4.search element "
+							+ "\n 5.print array \n 6.exit");
+			ch = sc.nextInt();
+		switch (ch) {
+		case 1:
+			System.out.print("Enter the index and value ");
+			int index = sc.nextInt();
+			int val = sc.nextInt();
+			ae.insert(index, val);
+			break;
+		case 2:
+			System.out.print("Enter the index and value to be Updated ");
+			int index1 = sc.nextInt();
+			int val1 = sc.nextInt();
+			ae.update(index1, val1);
+			break;
+		case 3:
+			System.out.print("Enter the index to be deleted ");
+			int index2 = sc.nextInt();
+			ae.delete(index2);
+			break;
+		case 4:
+			System.out.print("Enter the Element to be searched ");
+			int ele = sc.nextInt();
+			ae.search(ele);
+			break;
+		case 5:
+			ae.print();
+			break;
+		}
+	} while (ch != 6);
+	}
+
+}
