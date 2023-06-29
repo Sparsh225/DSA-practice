@@ -1,0 +1,14 @@
+package bitManipulation;
+
+public class evenodd {
+
+	public static void main(String[] args) {
+		int n = 12;
+		if ((n & 1) == 1) {
+			System.out.print("Odd number");
+		} else {
+			System.out.print("Even number");
+		}
+	}
+
+}
