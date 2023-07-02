@@ -12,7 +12,7 @@ public class smallernumberarry {
 		Arrays.sort(a);
 		HashMap<Integer, Integer> map = new HashMap<>();
 		for (int i = 0; i < a.length; i++) {
-			map.put(a[i], i);
+			map.putIfAbsent(a[i], i);
 
 		}
 		int[] out = new int[a.length];
