@@ -1,0 +1,19 @@
+package TwoDarray;
+
+public class ToeplitzMatrix {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[][] mat = { { 1, 2, 3, 4 }, { 5, 1, 2, 3 }, { 4, 5, 1, 2 } };
+		for (int i = 0; i < mat.length - 1; i++) {
+			for (int j = 0; j < mat[i].length - 1; j++) {
+				if (mat[i][j] != mat[i + 1][j + 1]) {
+					System.out.print("Not Toeplitz matrix");
+				}
+			}
+		}
+		System.out.print("Yes Toeplitz matrix");
+
+	}
+
+}
