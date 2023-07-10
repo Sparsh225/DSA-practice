@@ -1,0 +1,70 @@
+package Stack;
+
+public class stackwitharray {
+
+	private static class mystack {
+		private int[] arr;
+		int capacity;
+		int top;
+
+		public mystack(int c) {
+			capacity = c;
+			arr = new int[capacity];
+			top = -1;
+		}
+
+		public void push(int x) {
+			if (top == capacity - 1) {
+				System.out.print("stack is full");
+				return;
+			}
+			arr[++top] = x;
+			System.out.print("Element is inserted " + arr[top]);
+		}
+
+		public void pop() {
+			if (top == -1) {
+				System.out.print("Stack is empty");
+			}
+			System.out.print("Element pop " + arr[top]);
+			top--;
+		}
+
+		public int peek() {
+			if (top == -1) {
+				System.out.print("Stack is empty");
+				return -1;
+			}
+			return arr[top];
+		}
+
+		public int size() {
+			return top + 1;
+		}
+
+		public boolean isEmpty() {
+			return top == -1;
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		mystack m = new mystack(6);
+		m.push(22);
+		m.push(33);
+		m.push(211);
+		m.push(24);
+		m.push(41);
+		m.push(44);
+		System.out.print("size " + m.size());
+		m.pop();
+		m.pop();
+		m.pop();
+		m.pop();
+		m.pop();
+		m.pop();
+		m.pop();
+		m.pop();
+	}
+
+}
