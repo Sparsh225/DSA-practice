@@ -1,5 +1,5 @@
 package String;
-
+//you are given a string and check if divided into two equal half they contain equal number of vowels
 public class ALike {
 
 	public static void main(String[] args) {
