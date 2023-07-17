@@ -85,7 +85,7 @@ public class binarytreeoperators {
 				queue.addLast(root.left);
 			}
 			if (root.right != null) {
-				queue.addLast(root.left);
+				queue.addLast(root.right);
 			}
 
 		}
